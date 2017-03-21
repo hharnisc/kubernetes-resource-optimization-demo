@@ -1,0 +1,5 @@
+
+
+ Internet -------> NGINX ---------------> Etcd
+                      \
+		       \___> loader.io token
