@@ -31,6 +31,6 @@ spec:
           name: etcd-data
       volumes:
       - name: etcd-data
-        gcePersistentDisk:
-          pdName: etcd-data
+        awsElasticBlockStore:
+          volumeID: vol-0db191784b0cd64e1
           fsType: ext4
