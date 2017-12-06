@@ -9,7 +9,7 @@
 - expecting test to pass be be a little slow
 - increase cpu:500m
   - expecting that container can't start because
-- increase cpu:150m
+- increase cpu:50m
 - run ramp up test (250 clients)
   - expecting test to pass but still bounded by CPU
   - out of resources on the node (might want to show this)
