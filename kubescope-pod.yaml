@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kubescope-cli
+spec:
+  containers:
+  - image: hharnisc/kube-scope-cli:b296db64b528eb1013c3d6b592046a66cbff3291
+    name: kubescope-cli
+    stdin: true
+    tty: true
+    volumeMounts:
+    - mountPath: /var/run/docker.sock
+      name: docker-sock-volume
+    env:
+    - name: MATCH_NAME
+      value: ".*etcd.*"
+    - name: SKIP_NAME
+      value: ".*POD.*"
+    # - name: DOCKER_SOCKET
+    #   value: /var/run/docker.sock
+  volumes:
+  - name: docker-sock-volume
+    hostPath:
+      path: /var/run/docker.sock
+  # pin kubescope to a specific node
+  # nodeSelector:
+    # kubernetes.io/hostname: minikube
