@@ -1,7 +1,7 @@
 # Demo
 
 - create deployment
-  - start with cpu:50m and memory:5Mi
+  - start with cpu:25m and memory:5Mi
 - run ramp up test (250 clients)
   - expecting to see `OOMKilled`
 - increase memory to 50Mi
